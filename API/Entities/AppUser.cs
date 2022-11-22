@@ -14,15 +14,15 @@ namespace API.Entities
         public DateTime LastActive { get; set; } = DateTime.Now;
         public string Gender { get; set; } = string.Empty;
         public string Introduction { get; set; } = string.Empty;
-        public string Lookinfor { get; set; } = string.Empty;
+        public string LookingFor { get; set; } = string.Empty;
         public string Interests { get; set; } = string.Empty;
         public string City { get; set; } = string.Empty;
         public string Country { get; set; } = string.Empty;
         public ICollection<Photo> Photos { get; set; } = null!;
 
-        public int GetAge()
-        {
-            return DateOfBirth.CalculateAge();
-        }
+        // public int GetAge()
+        // {
+        //     return DateOfBirth.CalculateAge();
+        // }
     }
 }

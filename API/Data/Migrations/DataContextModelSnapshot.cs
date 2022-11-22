@@ -56,7 +56,7 @@ namespace API.Data.Migrations
                     b.Property<DateTime>("LastActive")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Lookinfor")
+                    b.Property<string>("LookingFor")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
