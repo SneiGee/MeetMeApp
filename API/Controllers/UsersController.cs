@@ -1,4 +1,5 @@
-﻿using API.Data;
+﻿using System.Security.Claims;
+using API.Data;
 using API.Dtos;
 using API.Entities;
 using API.Extensions;
@@ -36,7 +37,8 @@ namespace API.Controllers
         [HttpPut]
         public async Task<ActionResult> UpdateUserProfile(MemberUpdateDto memberUpdateDto)
         {
-            var user = await _userRepository.GetUserByUsername(User.GetUsername());
+            var username = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var user = await _userRepository.GetUserByUsername(username!);
 
             _mapper.Map(memberUpdateDto, user);
 
