@@ -2,4 +2,5 @@ export interface IPhoto {
     id: number;
     url: string;
     publicId: string;
+    isMain: boolean;
 }
